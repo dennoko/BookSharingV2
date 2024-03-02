@@ -1,0 +1,25 @@
+name: GitHub Issue Notification
+
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if issue was opened
+        if: github.event_name == 'issues' && github.event.action == 'opened'
+        run: |
+          curl -X POST -H "Content-Type: application/json" -d '{
+            "content": "New Issue Created\n**Title:** '${{ github.event.issue.title }}'\n**Author:** ${{ github.event.issue.user.login }}\n**Body:** ${{ github.event.issue.body }}\n**URL:** ${{ github.event.issue.html_url }}"
+          }' ${{ secrets.DISCORD_WEBHOOK_URL }}
+      
+      - name: Check if comment was added
+        if: github.event_name == 'issues_comment' && github.event.action == 'created' && contains(github.event.comment.body, 'html_url')
+        run: |
+          curl -X POST -H "Content-Type: application/json" -d '{
+            "content": "New Comment Added\n**Issue Title:** '${{ github.event.issue.title }}'\n**Previous Comment:** '${{ github.event.changes.body.from }}'\n**New Comment:** '${{ github.event.comment.body }}'\n**URL:** ${{ github.event.comment.html_url }}"
+          }' ${{ secrets.DISCORD_WEBHOOK_URL }}
