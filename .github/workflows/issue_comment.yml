@@ -14,7 +14,7 @@ jobs:
         webhook_id: ${{ secrets.WEBHOOK_ID }}
         webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
         color: "2850AA"
-        username: "GitHub Bot"
+        username: "New Comment"
         message: |
           **Issue Title:** ${{ github.event.issue.title }}
           **Issue Body:**
