@@ -69,4 +69,7 @@ dependencies {
 
     // XmlPullParser
     implementation("xmlpull:xmlpull:1.1.3.4d_b4_min")
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
 }
