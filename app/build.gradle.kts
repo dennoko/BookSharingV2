@@ -66,4 +66,13 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    // XmlPullParser
+    implementation("xmlpull:xmlpull:1.1.3.4d_b4_min")
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+
+    // OkHttp3
+    implementation("com.squareup.okhttp3:okhttp:4.9.1")
 }
