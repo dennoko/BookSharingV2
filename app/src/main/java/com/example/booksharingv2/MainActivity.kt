@@ -15,9 +15,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.booksharingv2.screen.HomeScreen
-import com.example.booksharingv2.screen.MyPage
-import com.example.booksharingv2.screen.SettingScreen
+import com.example.booksharingv2.view.screen.HomeScreen
+import com.example.booksharingv2.view.screen.MyPage
+import com.example.booksharingv2.view.screen.SettingScreen
 import com.example.booksharingv2.ui.theme.BookSharingV2Theme
 
 class MainActivity : ComponentActivity() {
