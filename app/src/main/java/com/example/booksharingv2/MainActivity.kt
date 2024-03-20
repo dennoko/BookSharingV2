@@ -19,6 +19,7 @@ import com.example.booksharingv2.view.screen.HomeScreen
 import com.example.booksharingv2.view.screen.MyPage
 import com.example.booksharingv2.view.screen.SettingScreen
 import com.example.booksharingv2.ui.theme.BookSharingV2Theme
+import com.example.booksharingv2.view.ui_components.navigation.NavigationBottomBar
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +30,13 @@ class MainActivity : ComponentActivity() {
             BookSharingV2Theme {
                 // A surface container using the 'background' color from the theme
                 Scaffold(
-                    // Todo: BottomBar を実装する
+                    bottomBar = {
+                        NavigationBottomBar(
+                            clickedHome = { navController.navigate("home" ) },
+                            clickedMyPage = { navController.navigate( "mypage" ) },
+                            clickedSetting =  { navController.navigate("setting" ) }
+                        )
+                    }
                 ) {
                     Surface(
                         modifier = Modifier
