@@ -7,7 +7,12 @@ import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Tab
+import androidx.compose.material3.TabRow
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
@@ -23,41 +28,52 @@ fun NavigationBottomBar(
         contentColor = MaterialTheme.colorScheme.onSecondary,
         tonalElevation = 8.dp,
     ) {
-        // Todo: BottomBar のアイテムを実装する
-        BottomBarItem(
-            modifier = Modifier.weight(1f),
-            Icon = {
-                Icon(
-                    imageVector = Icons.Default.Home,
-                    contentDescription = null
-                )
-            }
-        ) {
-            clickedHome()
-        }
+        val selectedTab = remember { mutableStateOf(0) }
 
-        BottomBarItem(
-            modifier = Modifier.weight(1f),
-            Icon = {
-                Icon(
-                    imageVector = Icons.Default.Person,
-                    contentDescription = null
+        TabRow(
+            selectedTabIndex = selectedTab.value,
+            modifier = Modifier,
+            containerColor = MaterialTheme.colorScheme.secondaryContainer,
+            contentColor = MaterialTheme.colorScheme.onSecondary,
+        ) {
+            Tab(
+                selected = selectedTab.value == 0,
+                onClick = {
+                    clickedHome()
+                    selectedTab.value = 0
+                }
+            ) {
+                BottomBarItem(
+                    modifier = Modifier.weight(1f),
+                    imageVector = Icons.Default.Home
                 )
             }
-        ) {
-            clickedMyPage()
-        }
 
-        BottomBarItem(
-            modifier = Modifier.weight(1f),
-            Icon = {
-                Icon(
-                    imageVector = Icons.Default.Settings,
-                    contentDescription = null
+            Tab(
+                selected = selectedTab.value == 1,
+                onClick = {
+                    clickedMyPage()
+                    selectedTab.value = 1
+                }
+            ) {
+                BottomBarItem(
+                    modifier = Modifier.weight(1f),
+                    imageVector = Icons.Default.Person
                 )
             }
-        ) {
-            clickedSetting()
+
+            Tab(
+                selected = selectedTab.value == 2,
+                onClick = {
+                    clickedSetting()
+                    selectedTab.value = 2
+                }
+            ) {
+                BottomBarItem(
+                    modifier = Modifier.weight(1f),
+                    imageVector = Icons.Default.Settings
+                )
+            }
         }
     }
 }
