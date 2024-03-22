@@ -1,0 +1,24 @@
+name: Discord Message Notify
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Discord Message Notify
+      uses: appleboy/discord-action@0.0.3
+      with:
+        webhook_id: ${{ secrets.WEBHOOK_ID }}
+        webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+        color: "2850AA"
+        username: "New Comment"
+        message: |
+          **Issue Title:** ${{ github.event.issue.title }}
+          **Issue Body:**
+          ${{ github.event.issue.body }}
+          **Comment:**
+          ${{ github.event.comment.body }}
+          **URL:** ${{ github.event.comment.html_url }}
