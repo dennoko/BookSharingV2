@@ -67,6 +67,9 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
+    // Navigation Compose
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+
     // XmlPullParser
     implementation("xmlpull:xmlpull:1.1.3.4d_b4_min")
 
