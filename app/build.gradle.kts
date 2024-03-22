@@ -1,6 +1,9 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+
+    // firebase
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -78,4 +81,9 @@ dependencies {
 
     // OkHttp3
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
+
+    // Firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.7.4"))
+    // Firestore
+    implementation("com.google.firebase:firebase-firestore")
 }

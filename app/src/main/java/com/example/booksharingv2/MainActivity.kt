@@ -20,6 +20,8 @@ import com.example.booksharingv2.view.screen.MyPage
 import com.example.booksharingv2.view.screen.SettingScreen
 import com.example.booksharingv2.ui.theme.BookSharingV2Theme
 import com.example.booksharingv2.view.ui_components.navigation.NavigationBottomBar
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
