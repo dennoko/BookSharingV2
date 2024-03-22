@@ -1,6 +1,6 @@
 package com.example.booksharingv2.retrofit
 
-import com.example.booksharingv2.xml_converter.XmlCustomConverterFactory
+import com.example.booksharingv2.model.xml_converter.XmlCustomConverterFactory
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 

@@ -1,4 +1,4 @@
-package com.example.booksharingv2.xml_converter
+package com.example.booksharingv2.model.xml_converter
 
 import android.util.Xml
 import okhttp3.ResponseBody

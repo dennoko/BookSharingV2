@@ -1,4 +1,4 @@
-package com.example.booksharingv2.xml_converter
+package com.example.booksharingv2.model.xml_converter
 
 import okhttp3.ResponseBody
 import retrofit2.Converter
