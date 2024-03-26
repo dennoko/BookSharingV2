@@ -78,4 +78,7 @@ dependencies {
 
     // OkHttp3
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
+
+    //Reader
+    implementation("com.google.android.gms:play-services-code-scanner:16.1.0")
 }
